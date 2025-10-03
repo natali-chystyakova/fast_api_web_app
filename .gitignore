@@ -205,3 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+.idea/
+docker-compose.override.yml
+db_data/*
+!db_data/.gitkeep
