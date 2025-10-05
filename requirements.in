@@ -5,6 +5,8 @@ psycopg[binary]
 pydantic-settings
 pydantic
 alembic
+pydantic[email]
+passlib
 
 pre-commit
 black

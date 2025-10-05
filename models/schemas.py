@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 
 
 class ItemBase(BaseModel):
@@ -19,11 +19,15 @@ class Item(ItemBase):
 
 
 class UserBase(BaseModel):
-    email: str
+    email: EmailStr
 
 
 class UserCreate(UserBase):
     password: str
+
+
+class LiteUser(UserBase):
+    id: int
 
 
 class User(UserBase):
