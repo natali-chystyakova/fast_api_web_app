@@ -15,6 +15,15 @@ class User(Base):
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
     items = relationship("Item", back_populates="owner")
+    tokens = relationship("Token", back_populates="user")
+
+
+class Token(Base):
+    __tablename__ = "tokens"
+    id = Column(Integer, primary_key=True, index=True)
+    access_token = Column(String, unique=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    user = relationship("User", back_populates="tokens")
 
 
 class Item(Base):
