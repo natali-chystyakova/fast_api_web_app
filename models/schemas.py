@@ -26,6 +26,9 @@ class UserCreate(UserBase):
     password: str
 
 
+UserAuth = UserCreate
+
+
 class LiteUser(UserBase):
     id: int
 
@@ -37,3 +40,7 @@ class User(UserBase):
 
     class Config:
         from_attributes = True
+
+
+class Token(BaseModel):
+    access_token: str
